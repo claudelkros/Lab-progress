@@ -9,11 +9,12 @@
 <!--Link for custom styles -->
   <link rel="stylesheet" href="css/main.css">
 
+  <link rel="stylesheet" href="vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 
-
-<div class="chat">
+<!-- <div class="chat">
   <div class="chat-info">
     <span class="chat-receiver--pseudo">Sepcy</span>
   </div><br>
@@ -29,7 +30,7 @@
       <input type="text" class="chat-message">
       <i>Ok</i>
     </div>
-</div>
+</div> -->
 
 <div class="info-groupe">
   <span class="close-icon">x</span>
@@ -76,17 +77,17 @@
       <li class="item logout"><a href="#">Logout</a> <div class="line"></div></li>
     </ul>
     <div id="close-icon">
-      croix
+      <span class="fa fa-times-circle fa-3x"></span>
     </div>
   </div>
 
 <!-- Breadcrumb And search bar -->
   <div class="breadcrumb">
         <a href="index.html">Accueil /</a>
-        <a href="#">UE</a>
   </div>
-  <input type="text" placeholder="Search" name="search" id="search">
-
+  <div class="search-bar">
+  <input type="text" placeholder="Search" name="search" id="search"><i class="fa fa-search"></i>
+  </div>
 
   <!-- Left block -->
   <div class="block general-information">
@@ -96,7 +97,7 @@
 
     <div class="informationMenu">
     <ul>
-      <li><a href="#" class="course">UE</a>
+      <li><a href="#" class="course">UE</span></a>
         <ul class="courses-list">
             <li><a href="#">Genie logiciel</a></li>
             <li><a href="#">Ordonnacement</a>
@@ -132,11 +133,10 @@
       </div>
 
       <div class="comment-section">
-        <input type="text" placeholder="Your comment .." id="comment">
-        <input type="submit" id="submitButton" value="Ok">
+        <div class="comment-icon"><i class="fa fa-comments fa-2x" ></i></div>
       </div>
 
-    </div><br>
+    </div>
     <div class="content-1">
       <div class="post-title">
         <img src="images/profile.jpg" alt="Image de profile" class="post-image" width="70px" height="70px">
@@ -151,11 +151,11 @@
       </div>
 
       <div class="comment-section">
-        <input type="text" placeholder="Your comment .." id="comment">
-        <input type="submit" id="submitButton" value="Ok">
+        <div class="comment-icon"><i class="fa fa-comments fa-2x" ></i></div>
       </div>
 
-    </div><br> <div class="content-1">
+    </div>
+    <div class="content-1">
       <div class="post-title">
         <img src="images/profile.jpg" alt="Image de profile" class="post-image" width="70px" height="70px">
         <div class="info-post"><span class="post-name">by Sepele Petsou</span>
@@ -169,11 +169,10 @@
       </div>
 
       <div class="comment-section">
-        <input type="text" placeholder="Your comment .." id="comment">
-        <input type="submit" id="submitButton" value="Ok">
+        <div class="comment-icon"><i class="fa fa-comments fa-2x"></i></div>
       </div>
-
-    </div><br> <div class="content-1">
+  </div>
+    <div class="content-1">
       <div class="post-title">
         <img src="images/profile.jpg" alt="Image de profile" class="post-image" width="70px" height="70px">
         <div class="info-post"><span class="post-name">by Sepele Petsou</span>
@@ -187,11 +186,11 @@
       </div>
 
       <div class="comment-section">
-        <input type="text" placeholder="Your comment .." id="comment">
-        <input type="submit" id="submitButton" value="Ok">
+        <div class="comment-icon"><i class="fa fa-comments fa-2x"></i></div>
       </div>
 
-    </div><br> <div class="content-1">
+    </div>
+    <div class="content-1">
       <div class="post-title">
         <img src="images/profile.jpg" alt="Image de profile" class="post-image" width="70px" height="70px">
         <div class="info-post"><span class="post-name">by Sepele Petsou</span>
@@ -205,11 +204,10 @@
       </div>
 
       <div class="comment-section">
-        <input type="text" placeholder="Your comment .." id="comment">
-        <input type="submit" id="submitButton" value="Ok">
+        <div class="comment-icon"><i class="fa fa-comments fa-2x" ></i></div>
       </div>
-
-    </div><br> <div class="content-1">
+  </div>
+    <div class="content-1">
       <div class="post-title">
         <img src="images/profile.jpg" alt="Image de profile" class="post-image" width="70px" height="70px">
         <div class="info-post"><span class="post-name">by Sepele Petsou</span>
@@ -223,11 +221,11 @@
       </div>
 
       <div class="comment-section">
-        <input type="text" placeholder="Your comment .." id="comment">
-        <input type="submit" id="submitButton" value="Ok">
+        <div class="comment-icon"><i class="fa fa-comments fa-2x"></i></div>
       </div>
 
-    </div><br> <div class="content-1">
+    </div>
+    <div class="content-1">
       <div class="post-title">
         <img src="images/profile.jpg" alt="Image de profile" class="post-image" width="70px" height="70px">
         <div class="info-post"><span class="post-name">by Sepele Petsou</span>
@@ -241,14 +239,11 @@
       </div>
 
       <div class="comment-section">
-        <input type="text" placeholder="Your comment .." id="comment">
-        <input type="submit" id="submitButton" value="Ok">
+        <div class="comment-icon"><i class="fa fa-comments fa-2x"></i></div>
       </div>
-
-    </div><br>
   </div><br>
 
-
+</div>
 
 
     <!-- Right content -->

@@ -7,9 +7,11 @@
   src: url('../fonts/montserrat/Montserrat-Bold.ttf');
 }
 
-$border-radius: 20px;
-
+$border-radius: 2px;
+//#675dfc, #a2d5e5, #cbdbe0, #88c6e3
 $font-title--bold : Monserrat-Bold;
+$second-color: #4ac4b5;
+$line-color: #fefefe;
 
 // Media Break points
 $phone:420px;
@@ -58,10 +60,7 @@ html, body {
 
 .container {
   height: 100vh;
-  background-color: #141414;
-  background-image: url('../images/never.jpg');
-  background-size: cover;
-  background-blend-mode: soft-light;
+  background-color: #f6f6f6;
 }
 // Style of the scrollbar
 ::-webkit-scrollbar {
@@ -69,36 +68,29 @@ html, body {
   width: 10px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: blue;
-  border-radius: 44px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000;
-}
-
-
 
 
 
 header {
-  /* background-color: skyblue; */
+  -webkit-box-shadow: 1px 2px 15px -7px rgba(0,0,0,0.35);
+box-shadow: 1px 2px 15px -7px rgba(0,0,0,0.35);
 }
 
-footer, .breadcrumb,
- .content-1, .content-2,
-.connected-users, .group-tpe{
-  background-color: white;
 
+.breadcrumb,.general-information
+{
+  background-color: $second-color;
+}
+header {
+  background-color: $second-color;
+}
+
+.connected-users, .group-tpe {
+  background-color: $second-color;
+}
+
+.content-1{
+  background-color: #ffffff;
 }
 
 
@@ -125,7 +117,7 @@ footer, .breadcrumb,
     top: 10px;
     width:100%;
     height: 3px;
-    background-color: white;
+    background-color: $line-color;
     transition: all 0.3s;
 
     @include phone {
@@ -145,8 +137,8 @@ footer, .breadcrumb,
     bottom: 7px;
     width: 70%;
     height: 3px;
-    background-color: white;
     transition: all 0.3s ;
+    background-color: $line-color;
   }
 
   #MenuLine::after {
@@ -155,8 +147,8 @@ footer, .breadcrumb,
     top: 7px;
     width: 70%;
     height: 3px;
-    background-color: white;
-    transition: all 0.3s ;
+    transition: all 0.3s;
+    background-color: $line-color;
   }
 
   .MenuIcon:hover #MenuLine{
@@ -227,11 +219,11 @@ footer, .breadcrumb,
   width: 30vw;
   height: 100vh;
   z-index: 100000;
-  background-color: skyblue;
+  background-color: $second-color;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 0.3s ease-out;
+  transition: all 0.4s ease-out;
 
   @include phone {
     width: 40%;
@@ -281,10 +273,15 @@ footer, .breadcrumb,
   }
 
   #close-icon {
-    margin-top: 40px;
-    color: black;
-    width: 40px;
-    height: 40px;
+    margin-top: 50px;
+    .fa-times-circle{
+      color: #ffff
+    }
+
+    .fa-times-circle:hover {
+      transform: rotate(180deg);
+      transition: all .3s ease-out;
+    }
   }
 
   #close-icon:hover {
@@ -303,7 +300,7 @@ footer, .breadcrumb,
   height: 30px;
   margin-right: 60px;
   margin-left: 30px;
-  padding-left: 2%;
+  padding-left: 1.2%;
   border-radius: $border-radius;
 
     a{
@@ -351,10 +348,6 @@ footer, .breadcrumb,
   }
 }
 
-#search{
-   margin: 0 20px 0px 20px;
-}
-
 
 
 /* ********************* *\
@@ -370,7 +363,7 @@ header {
   z-index: 100;
   transition: all 0.3s ease-in-out;
   justify-content: flex-end;
-
+  /* background-color: $second-color; */
   .notification-icon{
     margin-left: 86%;
     z-index: 101;
@@ -412,7 +405,7 @@ header {
   margin-top: 10px;
   padding: 4px 8px 5px 5px;
   border-radius: 14px;
-  background-color: skyblue;
+  border: 1px solid $second-color;
   height: 17px;
 
 }
@@ -421,7 +414,7 @@ header {
   margin-left: 13px;
   padding: 4px 8px 5px 5px;
   border-radius: 14px;
-  background-color: skyblue;
+  border: 1px solid $second-color;
   height: 17px;
 }
 
@@ -431,30 +424,65 @@ header {
 }
 
 // Search bar
+.search-bar input[type=text] + i {
+  z-index: 2;
+  position: absolute;
+  left: 92%;
+  top: 5px;
+  color: $second-color;
+
+  @include phone {
+    top: 1.5px;
+  }
+}
+
+.search-bar input[type=text] + i:hover {
+  cursor: pointer;
+}
+
+.search-bar input[type=text]:focus {
+  border-color: $second-color;
+}
+
 #search {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid $second-color;
+  border-top: none;
+  border-left: none;
+  padding-left: 10px;
+
+}
+.search-bar {
+ position: relative;
  grid-column: 10 / 13;
  grid-row: 3 / 3;
  margin: 0 30px 0 30px;
- border-radius: 15px 15px 15px 15px;
- padding-left: 10px;
+ border-radius: $border-radius;
  align-self: center;
  height: 30px;
- /* height: 30%; */
 
-
- @include tab {
-  grid-column: 1 / 8;
+  @include tab {
+  position: absolute;
+  grid-column: 1 / 5;
   grid-row: 1 / 1;
   margin-left: 30px;
-  height: 60%;
-  top: 30%;
-  position: absolute;
+  height: 90%;
+  width: 100%;
+  top: 25%;
   z-index: 398398393;
  }
 
  @include phone{
-  grid-column: 1 / 2;
+  position: absolute;
+  grid-column: 1 / 5;
   grid-row: 1 / 1;
+  top: 35%;
+  width: 100%;
+  height: 70%;
   z-index: 398398393;
   margin: -5px 0 0 10px;
  }
@@ -463,46 +491,68 @@ header {
 
 
 /* Left block */
+  .general-information::before {
+    position: relative;
+    content: '';
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 20%;
+    background-color: $second-color;
+    height: 3px;
+    border-radius: 10px;
+    z-index: 2;
+  }
+  .general-information::after {
+    position: relative;
+    content: '';
+    top: -78.5%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 50%;
+    background-color: $second-color;
+    height: 0.5px;
+  }
 
   .general-information {
+    background-color: #ffffff;
     grid-row: 4 / span 3;
     grid-column: 1 / 4;
     margin-left: 30px;
-    background-color: white;
     z-index: 10;
     display: flex;
     flex-direction: column;
     border-radius: $border-radius;
+    border-left: 2px solid $second-color;
 
 
     .information-title{
-      background-color: skyblue;
       text-align: center;
       font-family: $font-title--bold;
       font-size: 1.3em;
     }
 
     .informationMenu{
-      margin-top: 20px;
+      margin-top: 30px;
       @include phone {
         margin-top: 0
       }
       ul {
-
+        border: 1px solid $second-color;
 
         li{
-
           position: relative;
           right: 0;
           list-style: none;
           width: 100%;
           padding-top: 10px;
-          border-top: 1px solid black;
+          border-top: 1px solid $second-color;
 
 
           a{
+            color: black;
             text-decoration: none;
-            margin-left: 18px;
+            margin: 10px;
           }
 
           ul{
@@ -510,7 +560,15 @@ header {
             visibility: hidden;
             left: 100%;
             opacity: 0;
-            background-color: gray;
+            background-color: $second-color;
+            border-left: 2px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            border-top: 2px solid black;
+
+            li{
+              border-top: 1px solid black;
+            }
           }
         }
 
@@ -518,7 +576,7 @@ header {
           position: absolute;
           transition: all 0.3s;
           top: 0;
-          margin-top: -1px;
+          margin-top: -2px;
           left: 100%;
           visibility: visible;
           opacity: 1;
@@ -546,18 +604,39 @@ header {
   }
 
   // Display connected users
-
+  .connected-users::before {
+    position: relative;
+    content: '';
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 20%;
+    background-color: $second-color;
+    height: 3px;
+    border-radius: 10px;
+    z-index: 2;
+  }
+  .connected-users::after {
+    position: relative;
+    content: '';
+    top: -68%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 50%;
+    background-color: $second-color;
+    height: 0.5px;
+  }
   .connected-users {
+    background-color: #ffffff;
     grid-row: 4 / span 3;
     grid-column: 10 / 13 ;
-    background-color: white;
     display: flex;
     flex-direction: column;
     margin: 0 30px 0 30px;
     border-radius: $border-radius;
+    border-left: 2px solid $second-color;
 
     .users-content-title{
-      background-color: skyblue;
       text-align: center;
       font-family: $font-title--bold;
       font-size: 1.3em;
@@ -570,9 +649,10 @@ header {
           flex-direction: row;
           margin-left: 5%;
           margin-top: 13px;
-      }
+        }
 
       a{
+        color: black;
         text-decoration: none;
       }
 
@@ -604,31 +684,57 @@ header {
 
 /* Groupe tpe Area */
 
+  .group-tpe::before {
+    position: relative;
+    content: '';
+    top: 18.5%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 20%;
+    background-color: $second-color;
+    height: 3px;
+    border-radius: 10px;
+    z-index: 2;
+  }
+  .group-tpe::after {
+    position: relative;
+    content: '';
+    top: -59.7%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 50%;
+    background-color: $second-color;
+    height: 0.5px;
+  }
+
   .group-tpe {
+    background-color: #ffffff;
     grid-row: 7 / span 3;
     grid-column: 10 / 13 ;
     display: flex;
     flex-direction: column;
     margin: 0 30px 0 30px;
     border-radius: $border-radius;
+    border-left: 2px solid $second-color;
 
     .groupe-tpe-title {
-      background-color: skyblue;
       text-align:center;
       font-family: $font-title--bold;
       font-size: 1.3em;
     }
 
     .groupe-tpe-content {
+      margin-top: 20px;
       display: flex;
       flex-direction: column;
-      margin-top: 10px;
+
 
       .tpe-item {
         margin-top: 5px;
         margin-left: 5%;
 
         a{
+          color: black;
           text-decoration: none;
         }
 
@@ -675,6 +781,12 @@ header {
       padding:20px;
       display: flex;
       flex-direction: column;
+      margin-bottom: 10px;
+      border-left: 0.5px solid $second-color;
+      border-right: 0.5px solid $second-color;
+      border-bottom: 0.5px solid $second-color;
+      border-top: 4px solid $second-color;
+      text-align: justify;
 
       .post-title {
         display: flex;
@@ -716,20 +828,18 @@ header {
       .comment-section {
         display: flex;
         flex-direction: row;
-        margin-top: 2%;
         justify-content: flex-end;
 
-
-        #comment {
-          border-radius: 10px;
-          width: 40%;
-          height: 22px;
+        .fa-comments {
+          margin-top: 10px;
+          color: $second-color;
+          transition: all .3s ease-in-out;
         }
 
-        #submitButton {
-          border-radius: 10px;
-          margin-left: 4px;
-          height: 27px;
+        .fa-comments:hover {
+          cursor: pointer;
+          transform: scale(1.08);
+          transition: all .3s ease-in-out;
         }
       }
 
